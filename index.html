@@ -811,16 +811,7 @@
         <svg class="mini-logo-inline bmw-spin" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
       </div>
       <div class="m-stripe-bar" style="width:65%; margin-bottom:6px;"></div>
-      <!-- მბრუნავი ვინილის ვიჯეტი (Craig Isto - Cant Get Enough) -->
-      <div class="vinyl-player-widget" onclick="toggleMusicPlayback(); triggerBurnoutSmoke(event, this);">
-        <div class="vinyl-disc" id="vinyl-disc-el">
-          <div class="vinyl-center-label"></div>
-        </div>
-        <div class="vinyl-info">
-          <span class="vinyl-song-title">Cant Get Enough</span>
-          <span class="vinyl-artist">Craig Isto 🎶</span>
-        </div>
-      </div>
+
 
       <div class="handwritten-box">
         <p><span id="typed-letter" class="pen-cursor"></span></p>
@@ -914,17 +905,14 @@
       }
 
       const audio = document.getElementById('bg-music');
-      if (!musicStarted) {
+      // iOS აუდიოს განბლოკვა და დაკვრა პირდაპირ შეხებისას
+      audio.load();
+      audio.play().then(() => {
         musicStarted = true;
-        audio.play().then(() => {
-          updateVinylState();
-        }).catch(err => {
-          console.log("Mobile play failed:", err);
-          musicStarted = false;
-        });
-      } else {
         updateVinylState();
-      }
+      }).catch(err => {
+        console.log("iOS touch play failed:", err);
+      });
 
       if (clickCount < buttonTexts.length) {
         catchBtnLabel.textContent = buttonTexts[clickCount];
@@ -1053,7 +1041,13 @@
           musicStarted = true;
           updateVinylState();
         }).catch(e => {
-          console.log("Toggle play error:", e);
+          console.log("Audio play error on iOS:", e);
+          // iOS fallback: force load and play
+          audio.load();
+          audio.play().then(() => {
+            musicStarted = true;
+            updateVinylState();
+          });
         });
       } else {
         audio.pause();
