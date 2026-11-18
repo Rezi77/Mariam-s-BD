@@ -514,22 +514,22 @@
       .letter-hint-text { font-size: 0.95rem; }
       .beating-heart-btn { width: 34px; height: 34px; }
     }
-      /* მბრუნავი ვინილის მიკრო-ვიჯეტი (მეტად კომპაქტური ქვედა მარცხენა კუთხეში) */
+      /* მბრუნავი ვინილის ნანო-ვიჯეტი (კიდევ უფრო დაპატარავებული ქვედა მარცხენა კუთხეში) */
     .vinyl-player-widget {
       position: absolute;
-      bottom: 8px;
-      left: 8px;
+      bottom: 6px;
+      left: 6px;
       z-index: 25;
       display: flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(10, 22, 44, 0.88);
+      gap: 5px;
+      background: rgba(10, 22, 44, 0.9);
       border: 1px solid rgba(56, 189, 248, 0.35);
-      padding: 3px 8px;
+      padding: 2px 6px;
       border-radius: 50px;
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
       cursor: pointer;
       user-select: none;
       transition: transform 0.2s ease;
@@ -539,12 +539,12 @@
     }
 
     .vinyl-disc {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: radial-gradient(circle at center, #0f172a 0%, #1e293b 25%, #020617 30%, #0f172a 45%, #020617 65%, #000000 100%);
       border: 1px solid rgba(56, 189, 248, 0.6);
-      box-shadow: 0 0 6px rgba(0, 154, 218, 0.4);
+      box-shadow: 0 0 5px rgba(0, 154, 218, 0.4);
       position: relative;
       display: flex;
       justify-content: center;
@@ -563,11 +563,11 @@
     }
 
     .vinyl-center-label {
-      width: 8px;
-      height: 8px;
+      width: 6px;
+      height: 6px;
       background: linear-gradient(135deg, #0077c8, #e21d38);
       border-radius: 50%;
-      border: 0.8px solid #ffffff;
+      border: 0.6px solid #ffffff;
     }
 
     .vinyl-info {
@@ -578,14 +578,14 @@
 
     .vinyl-song-title {
       font-family: 'Orbitron', sans-serif;
-      font-size: 0.52rem;
+      font-size: 0.46rem;
       color: #e0f2fe;
       font-weight: 700;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
     }
 
     .vinyl-artist {
-      font-size: 0.46rem;
+      font-size: 0.40rem;
       color: #7dd3fc;
       font-family: sans-serif;
     }
@@ -908,16 +908,22 @@
     const catchBtnLabel = catchBtn.querySelector('span');
 
     function handleCatch(event) {
-      setTimeout(updateVinylState, 200);
       if (event) {
         event.preventDefault();
         event.stopPropagation();
       }
 
+      const audio = document.getElementById('bg-music');
       if (!musicStarted) {
         musicStarted = true;
-        const audio = document.getElementById('bg-music');
-        audio.play().catch(() => { musicStarted = false; });
+        audio.play().then(() => {
+          updateVinylState();
+        }).catch(err => {
+          console.log("Mobile play failed:", err);
+          musicStarted = false;
+        });
+      } else {
+        updateVinylState();
       }
 
       if (clickCount < buttonTexts.length) {
@@ -1042,24 +1048,16 @@
 
     function toggleMusicPlayback() {
       const audio = document.getElementById('bg-music');
-      // მობილურებზე აუდიოს განბლოკვა და დაკვრა
-      audio.load();
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
+      if (audio.paused) {
+        audio.play().then(() => {
           musicStarted = true;
           updateVinylState();
-        }).catch(error => {
-          console.log("Audio play blocked/failed:", error);
-          // მეორადი ცდა მომხმარებლის ჟესტზე
-          document.addEventListener('touchstart', function unlockAudio() {
-            audio.play().then(() => {
-              musicStarted = true;
-              updateVinylState();
-              document.removeEventListener('touchstart', unlockAudio);
-            });
-          }, { once: true });
+        }).catch(e => {
+          console.log("Toggle play error:", e);
         });
+      } else {
+        audio.pause();
+        updateVinylState();
       }
     }
 
