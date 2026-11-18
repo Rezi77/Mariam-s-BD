@@ -2,7 +2,10 @@
 <html lang="ka">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#060d1a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>გილოცავ დაბადების დღეს, მარიამ! 🏁💙</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,15 +21,25 @@
       text-rendering: optimizeLegibility;
     }
 
+    html {
+      background-color: #060d1a;
+      height: 100%;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       min-height: 100vh;
       min-height: 100dvh;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: #060d1a;
       /* BMW M-Sport ღამის ლურჯი და კარბონის გრადიენტი */
-      background: radial-gradient(circle at 20% 20%, #0b1d3a 0%, #060d1a 45%, #0a1122 75%, #160918 100%);
+      background-image: radial-gradient(circle at 20% 20%, #0b1d3a 0%, #060d1a 45%, #0a1122 75%, #160918 100%);
       overflow: hidden;
       position: relative;
     }
@@ -60,7 +73,7 @@
     }
 
     .animated-bg {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       pointer-events: none; overflow: hidden; z-index: 1;
     }
 
@@ -143,7 +156,7 @@
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), inset 0 0 20px rgba(56, 189, 248, 0.15);
       text-align: center;
       max-width: 520px; width: 95%;
-      height: 94vh; height: 94dvh;
+      height: calc(94dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
       position: relative; z-index: 10;
       border: 1px solid rgba(56, 189, 248, 0.3);
       outline: 1px solid rgba(255, 255, 255, 0.08);
@@ -716,7 +729,7 @@
     let isAnimating = false;
 
     const fullTitleText = "გილოცავ ბეემვეშნიკო";
-    const fullLetterText = "მარიამ, გილოცავ! შენი დღეა დღეს,დღეს რა სულ,გისურვებ შენი სურვილების უკლებლივ ასრულებას და ისეთი ტროიკის დათრევას როგორიც შენ გინდა,მე მიხარია შენი გაცნობა,ეს ჩემთვისვეა კაი,იმიტო რო კარგი ადმიანების ყოლაზე კაი რა უნდა იყოს,ამიტომ შენი სახით პლიუსში ვარ,ბედნიერებას გისურვებ მარიამ,შენ სულ ბედნიერი უნდა იყო ძაან ლამაზი და მხიარული ხარ,რაც ძაან გიხდება,მე პირადად არმინახიხარ ჯერ,რაც მარტო ჩემი ბრალი არაა,მაგრამ დარწმუნებულივარ ადამიანი რო შემოგხედავს გამორიცხულია,რო ეგრევე კარგ ხასიათზე არ დააყენო შენი ხასიათით მარიამ,ჯანმრთელი და ბედნიერი ყოფილიყავი სულ, ეგ გაუხარდება ყელას ვისაც უყვარხარ მარიამ. ❤️";
+    const fullLetterText = "მარიამ, გილოცავ! შენი დღეა დღეს,დღეს რა სულ,გისურვებ შენი სურვილების უკლებლივბ ასრულებას და ისეთი ტროიკის დათრევას როგორიც შენ გინდა,მე მიხარია შენი გაცნობა,ეს ჩემთვისვეა კაი,იმიტო რო კარგია ადმიანების ყოლაზე კაი რა უნდა იყოს,ამიტომ შენი სახით პლიუსში ვარ,ბედნიერებას გისურვებ მარიამ,შენ სულ ბედნიერი უნდა იყო ძაან ლამაზი და მხიარული ხარ,რაც ძაან გიხდება,მე პირადად არმინახიხარ ჯერ,რაც მარტო ჩემო ბრალი არაა,მაგრამ დარწმუნებულივარ ადამიანი რო შემოგხედავ გამორიცხულია,რო ეგრევე კარგ ხასიათზე არ დააყენო შენი ხასიათით მარიამ,ჯანმრთელი და ბედნიერი,ყოფილიყავი სულ, ეგ გაუხარდება ყელას ვისაც უყვარხარ მარიამ. ❤️";
 
     const buttonTexts = [
       "აბა კიდე 😜",
