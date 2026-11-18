@@ -328,17 +328,17 @@
       color: #bae6fd;
       font-family: 'Dancing Script', cursive, serif;
       font-weight: 700;
-      font-size: 1.2rem;
-      margin-bottom: 2px;
-      letter-spacing: 0.5px;
-      text-shadow: 0 2px 8px rgba(0, 154, 218, 0.8);
+      font-size: 0.98rem;
+      margin-bottom: 1px;
+      letter-spacing: 0.4px;
+      text-shadow: 0 1px 6px rgba(0, 154, 218, 0.7);
     }
 
-    .heart-btn-wrapper { margin-top: 2px; display: flex; flex-direction: column; align-items: center; }
+    .heart-btn-wrapper { margin-top: 1px; display: flex; flex-direction: column; align-items: center; }
 
     .beating-heart-btn {
       background: transparent; border: none; cursor: pointer; outline: none;
-      position: relative; width: 46px; height: 46px;
+      position: relative; width: 36px; height: 36px;
       display: flex; justify-content: center; align-items: center;
       padding: 0;
       animation: heartbeat 1.3s infinite ease-in-out;
@@ -514,6 +514,74 @@
       .letter-hint-text { font-size: 1.1rem; }
       .beating-heart-btn { width: 42px; height: 42px; }
     }
+    /* ვინილის ფლეიერის ვიჯეტი მეორე გვერდისთვის (შემცირებული, ქვედა მარცხენა კუთხეში) */
+    .vinyl-player-widget {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(6, 13, 26, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 4px 9px 4px 4px;
+      border-radius: 40px;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45), 0 0 10px rgba(0, 154, 218, 0.25);
+      z-index: 25;
+      pointer-events: none;
+    }
+
+    .vinyl-record {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #111 0%, #111 35%, #1d4ed8 35%, #1d4ed8 40%, #000 40%, #000 100%);
+      border: 1px solid rgba(186, 230, 253, 0.6);
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: spinVinyl 3s linear infinite;
+    }
+
+    .vinyl-center {
+      width: 9px;
+      height: 9px;
+      background: #38bdf8;
+      border-radius: 50%;
+      border: 1px solid #fff;
+    }
+
+    @keyframes spinVinyl {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .vinyl-info {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .vinyl-song {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.55rem;
+      color: #e0f2fe;
+      font-weight: bold;
+      letter-spacing: 0.3px;
+      text-shadow: 0 0 4px rgba(56, 189, 248, 0.7);
+      white-space: nowrap;
+    }
+
+    .vinyl-artist {
+      font-size: 0.48rem;
+      color: #7dd3fc;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
   </style>
 </head>
 <body>
@@ -616,6 +684,16 @@
 
     <!-- გვერდი 2: გალერეა -->
     <div id="page2" class="page">
+      <!-- ვინილის ვიჯეტი ქვედა მარცხენა კუთხეში -->
+      <div class="vinyl-player-widget">
+        <div class="vinyl-record">
+          <div class="vinyl-center"></div>
+        </div>
+        <div class="vinyl-info">
+          <span class="vinyl-song">Cant Get Enough</span>
+          <span class="vinyl-artist">Craig Isto</span>
+        </div>
+      </div>
       <div class="barbie-title">
         <svg class="beating-blue-heart" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 28.5C16 28.5 2 19.2 2 10.2C2 5.6 5.6 2 10.2 2C12.9 2 15.2 3.3 16 5.3C16.8 3.3 19.1 2 21.8 2C26.4 2 30 5.6 30 10.2C30 19.2 16 28.5 16 28.5Z" fill="#0ea5e9" stroke="#bae6fd" stroke-width="1.2"/>
