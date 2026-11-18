@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>გილოცავ დაბადების დღეს, მარიამ! 🏁💙</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Cinzel+Decorative:wght@700&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <style>
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+      -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* BMW M-Sport ღამის ლურჯი და კარბონის გრადიენტი */
+      background: radial-gradient(circle at 20% 20%, #0b1d3a 0%, #060d1a 45%, #0a1122 75%, #160918 100%);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Angel Eyes / BMW Xenon ფარების ნათების ეფექტი ფონზე */
+    body::before, body::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(85px);
+      pointer-events: none;
+      z-index: 0;
+      will-change: transform;
+    }
+    body::before {
+      width: 340px; height: 340px;
+      background: rgba(0, 122, 255, 0.35);
+      top: 8%; left: 12%;
+      animation: pulseGlow 7s infinite alternate ease-in-out;
+    }
+    body::after {
+      width: 380px; height: 380px;
+      background: rgba(226, 29, 56, 0.25);
+      bottom: 8%; right: 10%;
+      animation: pulseGlow 9s infinite alternate-reverse ease-in-out;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: scale(1) translate(0, 0); opacity: 0.45; }
+      100% { transform: scale(1.25) translate(20px, -20px); opacity: 0.85; }
+    }
+
+    .animated-bg {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; overflow: hidden; z-index: 1;
+    }
+
+    .floating-item {
+      position: absolute; bottom: -80px;
+      animation: floatUp infinite ease-in-out;
+      opacity: 0.85; z-index: 1; user-select: none;
+      display: flex; justify-content: center; align-items: center;
+      will-change: transform, opacity;
+      transform: translateZ(0);
+    }
+
+    .svg-icon {
+      width: 100%; height: 100%;
+      filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.45));
+    }
+
+    /* მინიატურული BMW ლოგოები და ელემენტები */
+    .bmw-mini { width: 26px; height: 26px; }
+    .bmw-tiny { width: 19px; height: 19px; }
+    .m-badge-float { width: 32px; height: 16px; }
+    .sparkle-float { width: 22px; height: 22px; }
+
+    .item-1 { left: 3%; animation-duration: 10s; animation-delay: 0s; }
+    .item-2 { left: 9%; animation-duration: 13s; animation-delay: 2s; }
+    .item-3 { left: 16%; animation-duration: 11s; animation-delay: 4s; }
+    .item-4 { left: 23%; animation-duration: 12s; animation-delay: 1s; }
+    .item-5 { left: 29%; animation-duration: 8s; animation-delay: 0.4s; }
+    .item-6 { left: 36%; animation-duration: 11.5s; animation-delay: 3s; }
+    .item-7 { left: 43%; animation-duration: 14s; animation-delay: 5s; }
+    .item-8 { left: 50%; animation-duration: 9s; animation-delay: 0.7s; }
+    .item-9 { left: 56%; animation-duration: 7.5s; animation-delay: 1.8s; }
+    .item-10 { left: 63%; animation-duration: 12s; animation-delay: 2.5s; }
+    .item-11 { left: 69%; animation-duration: 10.5s; animation-delay: 1.5s; }
+    .item-12 { left: 76%; animation-duration: 13s; animation-delay: 4.5s; }
+    .item-13 { left: 82%; animation-duration: 9s; animation-delay: 0.9s; }
+    .item-14 { left: 89%; animation-duration: 10s; animation-delay: 3.5s; }
+    .item-15 { left: 95%; animation-duration: 11.5s; animation-delay: 0.8s; }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg) scale(0.85); opacity: 0; }
+      20% { opacity: 0.9; }
+      50% { transform: translateY(-60vh) rotate(180deg) scale(1.1); }
+      100% { transform: translateY(-115vh) rotate(360deg) scale(0.85); opacity: 0; }
+    }
+
+    @keyframes spinSlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes angelPulse {
+      0%, 100% { filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.85)) drop-shadow(0 0 14px rgba(0, 122, 255, 0.6)); }
+      50% { filter: drop-shadow(0 0 12px rgba(125, 211, 252, 1)) drop-shadow(0 0 22px rgba(0, 122, 255, 0.9)); }
+    }
+
+    .bmw-spin {
+      animation: spinSlow 14s linear infinite, angelPulse 3s ease-in-out infinite;
+    }
+
+    .particle {
+      position: absolute;
+      pointer-events: none;
+      z-index: 100;
+      animation: explode 0.85s ease-out forwards;
+      will-change: transform, opacity;
+    }
+
+    @keyframes explode {
+      0% { opacity: 1; transform: translate(0, 0) scale(0.5) rotate(0deg); }
+      100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(1.3) rotate(var(--rot)); }
+    }
+
+    .card {
+      background: rgba(10, 20, 38, 0.55);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 16px 12px;
+      border-radius: 28px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), inset 0 0 20px rgba(56, 189, 248, 0.15);
+      text-align: center;
+      max-width: 520px; width: 95%;
+      height: 94vh; height: 94dvh;
+      position: relative; z-index: 10;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      outline: 1px solid rgba(255, 255, 255, 0.08);
+      outline-offset: -8px;
+      display: flex; flex-direction: column;
+      justify-content: space-between; align-items: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      will-change: transform;
+      overflow: hidden;
+    }
+
+    /* BMW M-Power ზედა და ქვედა სამფეროვანი ზოლი */
+    .m-stripe-bar {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #009ada 0%, #009ada 33.3%, #1b3b8c 33.3%, #1b3b8c 66.6%, #e21d38 66.6%, #e21d38 100%);
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(0, 154, 218, 0.5);
+      margin: 2px 0;
+    }
+
+    /* კუთხის მინიატურული BMW ლოგოები */
+    .corner-bmw {
+      position: absolute; width: 22px; height: 22px; z-index: 12; pointer-events: none;
+      animation: angelPulse 3s infinite ease-in-out;
+    }
+    .top-left { top: 12px; left: 12px; }
+    .top-right { top: 12px; right: 12px; }
+
+    .page {
+      display: none; width: 100%; opacity: 0;
+      transform: scale(0.92) translateY(15px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      will-change: transform, opacity;
+    }
+
+    .page.active {
+      display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 100%;
+      opacity: 1; transform: scale(1) translateY(0);
+      position: relative;
+    }
+
+    .title-wrapper { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 4px; margin-bottom: 2px; padding: 0 22px; }
+
+    h1 {
+      color: #e0f2fe; font-size: 1.38rem; line-height: 1.25;
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.75);
+      animation: pulseTitle 2.2s infinite ease-in-out;
+      font-weight: 700;
+    }
+
+    @keyframes pulseTitle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    .e46-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 30, 58, 0.75);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      color: #7dd3fc;
+      box-shadow: 0 0 12px rgba(0, 154, 218, 0.3);
+      margin-top: 2px;
+    }
+
+    /* E46 Showcase ბარათი პირველ გვერდზე */
+    .e46-showcase {
+      width: 92%;
+      max-width: 390px;
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1.5px solid rgba(56, 189, 248, 0.45);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 154, 218, 0.35);
+      background: rgba(5, 12, 24, 0.7);
+      margin: auto 0;
+    }
+
+    .e46-showcase img {
+      width: 100%;
+      height: 195px;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.08) saturate(1.1);
+      transition: transform 0.6s ease;
+    }
+
+    .e46-showcase:hover img {
+      transform: scale(1.04);
+    }
+
+    .e46-overlay-tag {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(6, 13, 26, 0.82);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 6px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      z-index: 5;
+    }
+    .e46-overlay-tag.top-tag {
+      top: 10px;
+    }
+
+    .e46-overlay-tag span {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      color: #e0f2fe;
+      letter-spacing: 1px;
+    }
+
+    /* Angel Eyes ორმაგი რგოლების ანიმაცია */
+    .angel-eyes-wrap {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .angel-ring {
+      width: 11px; height: 11px;
+      border-radius: 50%;
+      border: 1.8px solid #bae6fd;
+      box-shadow: 0 0 6px #38bdf8, inset 0 0 4px #38bdf8;
+      animation: angelPulse 2s infinite alternate;
+    }
+
+    .button-center-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 14px;
+      min-height: 54px;
+      position: relative;
+      z-index: 20;
+    }
+
+    #catch-btn {
+      background: linear-gradient(135deg, #0077c8 0%, #1b3b8c 55%, #c8102e 100%);
+      color: white; border: 1px solid rgba(186, 230, 253, 0.55); padding: 12px 26px;
+      font-size: 1.05rem; font-weight: bold; border-radius: 50px;
+      cursor: pointer; box-shadow: 0 8px 24px rgba(0, 154, 218, 0.45);
+      outline: none; 
+      display: inline-flex; align-items: center; gap: 8px;
+      touch-action: manipulation;
+      white-space: nowrap;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+      position: relative;
+      transition: transform 0.1s ease-out, box-shadow 0.2s ease;
+      will-change: transform;
+    }
+
+    #catch-btn:hover {
+      box-shadow: 0 10px 28px rgba(56, 189, 248, 0.7);
+    }
+
+    .barbie-title {
+      color: #7dd3fc; font-size: 1.55rem; font-weight: 700; margin-bottom: 4px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 38px;
+      font-family: 'Great Vibes', 'Dancing Script', cursive, serif;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 12px rgba(56, 189, 248, 0.8);
+    }
+
+    .letter-hint-text {
+      color: #bae6fd;
+      font-family: 'Dancing Script', cursive, serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 2px;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 8px rgba(0, 154, 218, 0.8);
+    }
+
+    .heart-btn-wrapper { margin-top: 2px; display: flex; flex-direction: column; align-items: center; }
+
+    .beating-heart-btn {
+      background: transparent; border: none; cursor: pointer; outline: none;
+      position: relative; width: 46px; height: 46px;
+      display: flex; justify-content: center; align-items: center;
+      padding: 0;
+      animation: heartbeat 1.3s infinite ease-in-out;
+      touch-action: manipulation;
+      will-change: transform;
+    }
+
+    .beating-heart-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(56, 189, 248, 0.8));
+      transition: filter 0.2s ease, transform 0.2s ease;
+    }
+
+    .beating-heart-btn:hover {
+      animation-play-state: paused;
+      transform: scale(1.18);
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      14% { transform: scale(1.2); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.12); }
+      70% { transform: scale(1); }
+    }
+
+    .back-btn {
+      background: linear-gradient(135deg, #0077c8, #1b3b8c);
+      color: white; border: 1px solid rgba(186, 230, 253, 0.4); padding: 10px 22px;
+      font-size: 0.95rem; font-weight: bold; border-radius: 50px;
+      cursor: pointer; box-shadow: 0 4px 15px rgba(0, 154, 218, 0.35);
+      transition: transform 0.2s ease; margin-top: 10px; outline: none;
+      display: inline-flex; align-items: center; gap: 6px;
+      touch-action: manipulation;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    }
+
+    .back-btn:hover { transform: scale(1.05); }
+
+    .gallery-container-wrapper {
+      position: relative;
+      width: 100%; flex: 1;
+      padding: 6px;
+      background: rgba(15, 28, 52, 0.45);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 22px;
+      box-shadow: inset 0 0 15px rgba(56, 189, 248, 0.1), 0 8px 25px rgba(0, 0, 0, 0.4);
+      margin: 2px 0;
+      overflow: hidden;
+    }
+
+    .gallery {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 12px; width: 100%; height: 100%;
+      overflow-y: auto; padding: 4px; scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .media-card {
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      width: 100%; height: 260px; position: relative; overflow: hidden; 
+      border-radius: 18px;
+      background: rgba(6, 13, 26, 0.55);
+      padding: 4px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+      border: 1.5px solid rgba(56, 189, 248, 0.35);
+      transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease;
+      cursor: pointer;
+      will-change: transform;
+    }
+
+    .media-card:nth-child(odd) { transform: rotate(-1.2deg); }
+    .media-card:nth-child(even) { transform: rotate(1.2deg); }
+
+    .media-card:hover {
+      transform: scale(1.03) rotate(0deg) translateY(-2px) !important;
+      box-shadow: 0 14px 28px rgba(0, 154, 218, 0.45);
+      z-index: 5;
+    }
+
+    .media-card img, .media-card video { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    /* მინიატურული BMW ლოგო თითოეულ ფოტო/ვიდეო ბარათზე */
+    .mini-bmw-badge {
+      position: absolute; top: 10px; right: 10px; width: 18px; height: 18px;
+      pointer-events: none;
+      filter: drop-shadow(0 0 5px rgba(56, 189, 248, 0.9));
+      z-index: 2;
+      animation: spinSlow 10s linear infinite;
+    }
+
+    .handwritten-box {
+      background: rgba(8, 18, 36, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background-image: repeating-linear-gradient(transparent, transparent 33px, rgba(56, 189, 248, 0.15) 33px, rgba(56, 189, 248, 0.15) 34px);
+      padding: 20px 16px; border-radius: 24px;
+      color: #f0f9ff;
+      font-size: 1.35rem;
+      line-height: 34px;
+      text-align: left;
+      border: 1.5px solid rgba(56, 189, 248, 0.4);
+      box-shadow: inset 0 0 25px rgba(0, 154, 218, 0.2), 0 12px 35px rgba(0, 0, 0, 0.55);
+      width: 100%; flex: 1; overflow-y: auto;
+      font-family: 'Charm', 'Great Vibes', 'Dancing Script', cursive, serif;
+      font-weight: 700;
+      position: relative;
+      letter-spacing: 0.8px;
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.65), 0 0 16px rgba(0, 119, 200, 0.4);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .romantic-letter-title {
+      font-family: 'Cinzel Decorative', 'Great Vibes', cursive, serif;
+      font-size: 1.5rem;
+      color: #7dd3fc;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.8), 0 2px 5px rgba(0,0,0,0.6);
+    }
+
+    .pen-cursor::after {
+      content: '💙';
+      display: inline-block;
+      font-size: 1.1rem;
+      margin-left: 3px;
+      animation: heartPulse 0.4s infinite alternate;
+      vertical-align: baseline;
+    }
+
+    @keyframes heartPulse {
+      0% { transform: scale(1) rotate(-5deg); }
+      100% { transform: scale(1.25) rotate(5deg); }
+    }
+
+    .mini-logo-inline { width: 20px; height: 20px; flex-shrink: 0; }
+
+    .beating-blue-heart {
+      width: 26px;
+      height: 26px;
+      display: inline-block;
+      flex-shrink: 0;
+      animation: blueHeartbeat 1.2s infinite ease-in-out;
+      will-change: transform, filter;
+    }
+
+    @keyframes blueHeartbeat {
+      0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 6px rgba(14, 165, 233, 0.85));
+      }
+      14% {
+        transform: scale(1.32);
+        filter: drop-shadow(0 0 14px rgba(56, 189, 248, 1)) drop-shadow(0 0 24px rgba(2, 132, 199, 0.95));
+      }
+      28% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.85));
+      }
+      42% {
+        transform: scale(1.25);
+        filter: drop-shadow(0 0 14px rgba(125, 211, 252, 1)) drop-shadow(0 0 22px rgba(37, 99, 235, 0.9));
+      }
+      70%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 6px rgba(14, 165, 233, 0.85));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 12px 8px; }
+      h1 { font-size: 1.18rem; }
+      .e46-showcase img { height: 170px; }
+      .barbie-title { font-size: 1.38rem; }
+      .media-card { height: 225px; }
+      .handwritten-box { font-size: 1.22rem; line-height: 32px; padding: 16px 12px; }
+      .romantic-letter-title { font-size: 1.28rem; }
+      .letter-hint-text { font-size: 1.1rem; }
+      .beating-heart-btn { width: 42px; height: 42px; }
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="bg-music" loop preload="auto">
+    <source src="milan.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- მრავალჯერადი მინიატურული BMW Roundel ლოგოს შაბლონი -->
+  <svg style="display:none;">
+    <defs>
+      <g id="bmw-roundel">
+        <circle cx="50" cy="50" r="48" fill="#111827" stroke="#e2e8f0" stroke-width="3"/>
+        <circle cx="50" cy="50" r="32" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+        <!-- ზედა მარცხენა და ქვედა მარჯვენა ლურჯი სექტორები -->
+        <path d="M50,50 L50,18 A32,32 0 0,0 18,50 Z" fill="#008ac9"/>
+        <path d="M50,50 L50,82 A32,32 0 0,0 82,50 Z" fill="#008ac9"/>
+        <circle cx="50" cy="50" r="32" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+        <line x1="50" y1="18" x2="50" y2="82" stroke="#1e293b" stroke-width="1.5"/>
+        <line x1="18" y1="50" x2="82" y2="50" stroke="#1e293b" stroke-width="1.5"/>
+        <!-- მინიატურული BMW ასოები ზედა რკალზე -->
+        <text x="50" y="13.5" font-family="Arial, sans-serif" font-weight="bold" font-size="9.5" fill="#ffffff" text-anchor="middle" letter-spacing="1.5">BMW</text>
+      </g>
+      <g id="m-stripes">
+        <polygon points="8,24 18,4 26,4 16,24" fill="#009ada"/>
+        <polygon points="18,24 28,4 36,4 26,24" fill="#1b3b8c"/>
+        <polygon points="28,24 38,4 46,4 36,24" fill="#e21d38"/>
+      </g>
+      <linearGradient id="blueHeartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#38bdf8"/>
+        <stop offset="50%" stop-color="#0284c7"/>
+        <stop offset="100%" stop-color="#1d4ed8"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- მფრინავი მინიატურული BMW ლოგოები და M-ხაზები ფონზე -->
+  <div class="animated-bg">
+    <div class="floating-item bmw-mini item-1"><svg class="svg-icon bmw-spin" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg></div>
+    <div class="floating-item bmw-tiny item-2"><svg class="svg-icon" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg></div>
+    <div class="floating-item m-badge-float item-3"><svg class="svg-icon" viewBox="0 0 54 28"><use href="#m-stripes"/></svg></div>
+    <div class="floating-item bmw-mini item-4"><svg class="svg-icon bmw-spin" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg></div>
+    <div class="floating-item bmw-tiny item-5"><svg class="svg-icon" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg></div>
+    <div class="floating-item m-badge-float item-6"><svg class="svg-icon" viewBox="0 0 54 28"><use href="#m-stripes"/></svg></div>
+    <div class="floating-item bmw-mini item-7"><svg class="svg-icon bmw-spin" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg></div>
+    <div class="floating-item bmw-tiny item-8"><svg class="svg-icon" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg></div>
+    <div class="floating-item sparkle-float item-9"><svg class="svg-icon" viewBox="0 0 30 30"><path d="M15 0L18.5 11.5L30 15L18.5 18.5L15 30L11.5 18.5L0 15L11.5 11.5L15 0Z" fill="#38bdf8"/></svg></div>
+    <div class="floating-item bmw-mini item-10"><svg class="svg-icon bmw-spin" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg></div>
+    <div class="floating-item m-badge-float item-11"><svg class="svg-icon" viewBox="0 0 54 28"><use href="#m-stripes"/></svg></div>
+    <div class="floating-item bmw-tiny item-12"><svg class="svg-icon" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg></div>
+    <div class="floating-item bmw-mini item-13"><svg class="svg-icon bmw-spin" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg></div>
+    <div class="floating-item bmw-tiny item-14"><svg class="svg-icon" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg></div>
+    <div class="floating-item m-badge-float item-15"><svg class="svg-icon" viewBox="0 0 54 28"><use href="#m-stripes"/></svg></div>
+  </div>
+
+  <div class="card">
+    <!-- ზედა კუთხის მინიატურული BMW ლოგოები -->
+    <svg class="corner-bmw top-left bmw-spin" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+    <svg class="corner-bmw top-right bmw-spin" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+
+    <!-- გვერდი 1: დასაწყისი + BMW E46 -->
+    <div id="page1" class="page active">
+      <div style="width:100%; display:flex; flex-direction:column; align-items:center;">
+        <div class="title-wrapper">
+          <svg class="mini-logo-inline bmw-spin" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+          <h1>გილოცავ მარიამ დაბადების დღეს!</h1>
+          <svg class="mini-logo-inline bmw-spin" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+        </div>
+        <div class="e46-badge">
+          <svg style="width:22px;height:12px;" viewBox="0 0 54 28"><use href="#m-stripes"/></svg>
+          <span>BMW E46 EDITION</span>
+        </div>
+        <div class="m-stripe-bar" style="width:70%; margin-top:6px;"></div>
+      </div>
+
+      <!-- BMW E46 მანქანის ფოტო (იყენებს ლოკალურ e46.jpg-ს ან fallback ონლაინ E46 ფოტოს) -->
+      <div class="e46-showcase">
+        <div class="e46-overlay-tag top-tag">
+          <div class="angel-eyes-wrap">
+            <div class="angel-ring"></div>
+            <div class="angel-ring"></div>
+          </div>
+          <span>BMW 3 SERIES • E46</span>
+          <div class="angel-eyes-wrap">
+            <div class="angel-ring"></div>
+            <div class="angel-ring"></div>
+          </div>
+        </div>
+        <img src="https://www.motoringresearch.com/wp-content/uploads/2024/12/001-BMW-M3-GTR-Need-for-Speed.jpg" alt="BMW M3 GTR E46">
+      </div>
+
+      <div class="button-center-container">
+        <button id="catch-btn" onclick="handleCatch(event)">
+          <svg style="width:20px;height:20px;" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+          <span>დააჭირე</span>
+          <svg style="width:24px;height:13px;" viewBox="0 0 54 28"><use href="#m-stripes"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- გვერდი 2: გალერეა -->
+    <div id="page2" class="page">
+      <div class="barbie-title">
+        <svg class="beating-blue-heart" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 28.5C16 28.5 2 19.2 2 10.2C2 5.6 5.6 2 10.2 2C12.9 2 15.2 3.3 16 5.3C16.8 3.3 19.1 2 21.8 2C26.4 2 30 5.6 30 10.2C30 19.2 16 28.5 16 28.5Z" fill="#0ea5e9" stroke="#bae6fd" stroke-width="1.2"/>
+          <path d="M9.5 6.5C7.2 6.8 5.8 8.5 5.8 10.5" stroke="#e0f2fe" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.85"/>
+        </svg>
+        <span id="typed-title" class="pen-cursor"></span>
+        <svg class="beating-blue-heart" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 28.5C16 28.5 2 19.2 2 10.2C2 5.6 5.6 2 10.2 2C12.9 2 15.2 3.3 16 5.3C16.8 3.3 19.1 2 21.8 2C26.4 2 30 5.6 30 10.2C30 19.2 16 28.5 16 28.5Z" fill="#0ea5e9" stroke="#bae6fd" stroke-width="1.2"/>
+          <path d="M9.5 6.5C7.2 6.8 5.8 8.5 5.8 10.5" stroke="#e0f2fe" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.85"/>
+        </svg>
+      </div>
+      
+      <div class="gallery-container-wrapper">
+        <div class="gallery" id="gallery-container">
+          <div class="media-card">
+            <svg class="mini-bmw-badge" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+            <img src="photo 1.jpg" alt="მარიამ" loading="lazy">
+          </div>
+          <div class="media-card">
+            <svg class="mini-bmw-badge" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+            <video class="scroll-video" muted loop playsinline preload="metadata"><source src="video 1.mp4" type="video/mp4"></video>
+          </div>
+          <div class="media-card">
+            <svg class="mini-bmw-badge" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+            <img src="photo 2.jpg" alt="მარიამ" loading="lazy">
+          </div>
+          <div class="media-card">
+            <svg class="mini-bmw-badge" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+            <video class="scroll-video" muted loop playsinline preload="metadata"><source src="video 2.mp4" type="video/mp4"></video>
+          </div>
+          <div class="media-card">
+            <svg class="mini-bmw-badge" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+            <img src="photo 3.jpg" alt="მარიამ" loading="lazy">
+          </div>
+          <div class="media-card">
+            <svg class="mini-bmw-badge" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+            <video class="scroll-video" muted loop playsinline preload="metadata"><source src="video 3.mp4" type="video/mp4"></video>
+          </div>
+          <div class="media-card">
+            <svg class="mini-bmw-badge" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+            <img src="photo 4.jpg" alt="მარიამ" loading="lazy">
+          </div>
+          <div class="media-card">
+            <svg class="mini-bmw-badge" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+            <video class="scroll-video" muted loop playsinline preload="metadata"><source src="video 4.mp4" type="video/mp4"></video>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-stripe-bar" style="width:75%;"></div>
+
+      <div class="heart-btn-wrapper">
+        <p class="letter-hint-text">გადადი წერილზე 👇</p>
+        <button class="beating-heart-btn" onclick="triggerHeartBurst(event); goToPage('page3')" aria-label="წერილზე გადასვლა">
+          <img src="https://em-content.zobj.net/source/apple/391/blue-heart_1f499.png" alt="Blue Heart Emoji">
+        </button>
+      </div>
+    </div>
+
+    <!-- გვერდი 3: წერილი -->
+    <div id="page3" class="page">
+      <div class="title-wrapper">
+        <svg class="mini-logo-inline bmw-spin" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+        <h1 class="romantic-letter-title">სათაურებში არ ვარგივარ!</h1>
+        <svg class="mini-logo-inline bmw-spin" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
+      </div>
+      <div class="m-stripe-bar" style="width:65%; margin-bottom:6px;"></div>
+
+      <div class="handwritten-box">
+        <p><span id="typed-letter" class="pen-cursor"></span></p>
+      </div>
+
+      <button class="back-btn" onclick="goToPage('page2')">
+        <span>⬅️ უკან დაბრუნება</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let clickCount = 0;
+    let musicStarted = false;
+    let titleTypingTimeout = null;
+    let letterTypingTimeout = null;
+    let videoObserver = null;
+    let isAnimating = false;
+
+    const fullTitleText = "გილოცავ ბეემვეშნიკო";
+    const fullLetterText = "მარიამ, გილოცავ! შენი დღეა დღეს,დღეს რა სულ,გისურვებ შენი სურვილების უკლებლივბ ასრულებას და ისეთი ტროიკის დათრევას როგორიც შენ გინდა,მე მიხარია შენი გაცნობა,ეს ჩემთვისვეა კაი,იმიტო რო კარგია ადმიანების ყოლაზე კაი რა უნდა იყოს,ამიტომ შენი სახით პლიუსში ვარ,ბედნიერებას გისურვებ მარიამ,შენ სულ ბედნიერი უნდა იყო ძაან ლამაზი და მხიარული ხარ,რაც ძაან გიხდება,მე პირადად არმინახიხარ ჯერ,რაც მარტო ჩემო ბრალი არაა,მაგრამ დარწმუნებულივარ ადამიანი რო შემოგხედავ გამორიცხულია,რო ეგრევე კარგ ხასიათზე არ დააყენო შენი ხასიათით მარიამ,ჯანმრთელი და ბედნიერი,ყოფილიყავი სულ, ეგ გაუხარდება ყელას ვისაც უყვარხარ მარიამ. ❤️";
+
+    const buttonTexts = [
+      "აბა კიდე 😜",
+      "რავი დააჭერ? 😛",
+      "მიდი მარიამ 🏁",
+      "ანუუ რავი 💥",
+      "რავი რავი 👑",
+      "კარგი ჰო 💙"
+    ];
+
+    const jumpPositions = [
+      { x: -75, y: -180 },
+      { x: 75, y: -60 },
+      { x: -75, y: -40 },
+      { x: 75, y: -190 },
+      { x: 0, y: -210 },
+      { x: 0, y: -20 }
+    ];
+
+    function createExplosion(x, y) {
+      const symbols = ['💙', '🏁', '✨', '💎', '🔥', '👑', '⚡', '💫'];
+      const particleCount = 16;
+      const fragment = document.createDocumentFragment();
+
+      for (let i = 0; i < particleCount; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        
+        // ყოველი მე-3 ნაწილაკი იყოს მინიატურული BMW ლოგო
+        if (i % 3 === 0) {
+          p.innerHTML = '<svg style="width:18px;height:18px;" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>';
+        } else {
+          p.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+          p.style.fontSize = (15 + Math.random() * 12) + 'px';
+        }
+        
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 75 + Math.random() * 135; 
+        const tx = Math.cos(angle) * distance + 'px';
+        const ty = Math.sin(angle) * distance + 'px';
+        const rot = (Math.random() - 0.5) * 360 + 'deg';
+
+        p.style.setProperty('--tx', tx);
+        p.style.setProperty('--ty', ty);
+        p.style.setProperty('--rot', rot);
+        p.style.left = x + 'px';
+        p.style.top = y + 'px';
+
+        fragment.appendChild(p);
+      }
+      
+      document.body.appendChild(fragment);
+
+      setTimeout(() => {
+        const particles = document.querySelectorAll('.particle');
+        particles.forEach(p => p.remove());
+      }, 850);
+    }
+
+    function triggerHeartBurst(event) {
+      createExplosion(event.clientX, event.clientY);
+    }
+
+    function handleCatch(event) {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      createExplosion(event.clientX, event.clientY);
+      const audio = document.getElementById('bg-music');
+      
+      if (!musicStarted) {
+        audio.play().then(() => musicStarted = true).catch(e => console.log(e));
+      }
+
+      const btn = document.getElementById('catch-btn');
+
+      if (clickCount < buttonTexts.length) {
+        btn.querySelector('span').textContent = buttonTexts[clickCount];
+        const pos = jumpPositions[clickCount % jumpPositions.length];
+        btn.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0)`;
+        clickCount++;
+
+        setTimeout(() => {
+          isAnimating = false;
+        }, 110);
+
+      } else {
+        isAnimating = false;
+        goToPage('page2');
+      }
+    }
+
+    function typeText(elementId, text, speed, callback) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      el.textContent = "";
+      el.classList.add("pen-cursor");
+      let i = 0;
+
+      function type() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          const randomSpeed = speed + (Math.random() * 20 - 10);
+
+          if (elementId === 'typed-title') {
+            titleTypingTimeout = setTimeout(type, randomSpeed);
+          } else {
+            letterTypingTimeout = setTimeout(type, randomSpeed);
+          }
+        } else {
+          el.classList.remove("pen-cursor");
+          if (callback) callback();
+        }
+      }
+      type();
+    }
+
+    function goToPage(pageId) {
+      const currentPage = document.querySelector('.page.active');
+      const nextPage = document.getElementById(pageId);
+
+      if (currentPage && currentPage !== nextPage) {
+        currentPage.style.opacity = '0';
+        currentPage.style.transform = 'scale(0.92) translateY(-15px)';
+
+        setTimeout(() => {
+          currentPage.classList.remove('active');
+          currentPage.style.transform = '';
+          nextPage.classList.add('active');
+          
+          requestAnimationFrame(() => {
+            nextPage.style.opacity = '1';
+            nextPage.style.transform = 'scale(1) translateY(0)';
+          });
+
+          if (pageId === 'page2') {
+            initScrollVideos();
+            clearTimeout(titleTypingTimeout);
+            typeText("typed-title", fullTitleText, 80);
+          } else if (pageId === 'page3') {
+            clearTimeout(letterTypingTimeout);
+            typeText("typed-letter", fullLetterText, 45);
+          }
+        }, 300);
+      }
+    }
+
+    function initScrollVideos() {
+      if (videoObserver) return; 
+
+      const container = document.getElementById('gallery-container');
+      const videos = container.querySelectorAll('.scroll-video');
+
+      const options = {
+        root: container,
+        threshold: 0.5
+      };
+
+      videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const video = entry.target;
+          if (entry.isIntersecting) {
+            if (video.paused) video.play().catch(e => console.log(e));
+          } else {
+            if (!video.paused) video.pause();
+          }
+        });
+      }, options);
+
+      videos.forEach(video => videoObserver.observe(video));
+    }
+  </script>
+</body>
+</html>
