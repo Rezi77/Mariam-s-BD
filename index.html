@@ -328,17 +328,17 @@
       color: #bae6fd;
       font-family: 'Dancing Script', cursive, serif;
       font-weight: 700;
-      font-size: 1.2rem;
-      margin-bottom: 2px;
+      font-size: 1.05rem;
+      margin-bottom: 1px;
       letter-spacing: 0.5px;
       text-shadow: 0 2px 8px rgba(0, 154, 218, 0.8);
     }
 
-    .heart-btn-wrapper { margin-top: 2px; display: flex; flex-direction: column; align-items: center; }
+    .heart-btn-wrapper { margin-top: 1px; display: flex; flex-direction: column; align-items: center; }
 
     .beating-heart-btn {
       background: transparent; border: none; cursor: pointer; outline: none;
-      position: relative; width: 46px; height: 46px;
+      position: relative; width: 38px; height: 38px;
       display: flex; justify-content: center; align-items: center;
       padding: 0;
       animation: heartbeat 1.3s infinite ease-in-out;
@@ -511,14 +511,90 @@
       .media-card { height: 225px; }
       .handwritten-box { font-size: 1.22rem; line-height: 32px; padding: 16px 12px; }
       .romantic-letter-title { font-size: 1.28rem; }
-      .letter-hint-text { font-size: 1.1rem; }
-      .beating-heart-btn { width: 42px; height: 42px; }
+      .letter-hint-text { font-size: 0.95rem; }
+      .beating-heart-btn { width: 34px; height: 34px; }
+    }
+      /* მბრუნავი ვინილის მიკრო-ვიჯეტი (მეტად კომპაქტური ქვედა მარცხენა კუთხეში) */
+    .vinyl-player-widget {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      z-index: 25;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(10, 22, 44, 0.88);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 3px 8px;
+      border-radius: 50px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.2s ease;
+    }
+    .vinyl-player-widget:hover {
+      transform: scale(1.03);
+    }
+
+    .vinyl-disc {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, #0f172a 0%, #1e293b 25%, #020617 30%, #0f172a 45%, #020617 65%, #000000 100%);
+      border: 1px solid rgba(56, 189, 248, 0.6);
+      box-shadow: 0 0 6px rgba(0, 154, 218, 0.4);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: spinVinyl 3s linear infinite;
+      animation-play-state: paused;
+    }
+
+    .vinyl-disc.playing {
+      animation-play-state: running;
+    }
+
+    @keyframes spinVinyl {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .vinyl-center-label {
+      width: 8px;
+      height: 8px;
+      background: linear-gradient(135deg, #0077c8, #e21d38);
+      border-radius: 50%;
+      border: 0.8px solid #ffffff;
+    }
+
+    .vinyl-info {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .vinyl-song-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.52rem;
+      color: #e0f2fe;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .vinyl-artist {
+      font-size: 0.46rem;
+      color: #7dd3fc;
+      font-family: sans-serif;
     }
   </style>
 </head>
 <body>
 
   <audio id="bg-music" loop preload="auto">
+    <source src="https://cdns-preview--d.dzcdn.net/stream/c-deda7392e7618991768f804791079541-3.mp3" type="audio/mpeg">
     <source src="milan.mp3" type="audio/mpeg">
   </audio>
 
@@ -627,6 +703,16 @@
           <path d="M9.5 6.5C7.2 6.8 5.8 8.5 5.8 10.5" stroke="#e0f2fe" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.85"/>
         </svg>
       </div>
+      <!-- მბრუნავი ვინილის ვიჯეტი (Craig Isto - Cant Get Enough) -->
+      <div class="vinyl-player-widget" onclick="toggleMusicPlayback()">
+        <div class="vinyl-disc" id="vinyl-disc-el">
+          <div class="vinyl-center-label"></div>
+        </div>
+        <div class="vinyl-info">
+          <span class="vinyl-song-title">Cant Get Enough</span>
+          <span class="vinyl-artist">Craig Isto 🎶</span>
+        </div>
+      </div>
       
       <div class="gallery-container-wrapper">
         <div class="gallery" id="gallery-container">
@@ -683,6 +769,16 @@
         <svg class="mini-logo-inline bmw-spin" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
       </div>
       <div class="m-stripe-bar" style="width:65%; margin-bottom:6px;"></div>
+      <!-- მბრუნავი ვინილის ვიჯეტი (Craig Isto - Cant Get Enough) -->
+      <div class="vinyl-player-widget" onclick="toggleMusicPlayback()">
+        <div class="vinyl-disc" id="vinyl-disc-el">
+          <div class="vinyl-center-label"></div>
+        </div>
+        <div class="vinyl-info">
+          <span class="vinyl-song-title">Cant Get Enough</span>
+          <span class="vinyl-artist">Craig Isto 🎶</span>
+        </div>
+      </div>
 
       <div class="handwritten-box">
         <p><span id="typed-letter" class="pen-cursor"></span></p>
@@ -770,6 +866,7 @@
     const catchBtnLabel = catchBtn.querySelector('span');
 
     function handleCatch(event) {
+      setTimeout(updateVinylState, 200);
       if (event) {
         event.preventDefault();
         event.stopPropagation();
@@ -832,6 +929,7 @@
     }
 
     function goToPage(pageId) {
+      setTimeout(updateVinylState, 350);
       const currentPage = document.querySelector('.page.active');
       const nextPage = document.getElementById(pageId);
 
@@ -885,6 +983,32 @@
 
       videos.forEach(video => videoObserver.observe(video));
     }
+  
+    function updateVinylState() {
+      const audio = document.getElementById('bg-music');
+      const vinyls = document.querySelectorAll('.vinyl-disc');
+      vinyls.forEach(v => {
+        if (!audio.paused && musicStarted) {
+          v.classList.add('playing');
+        } else {
+          v.classList.remove('playing');
+        }
+      });
+    }
+
+    function toggleMusicPlayback() {
+      const audio = document.getElementById('bg-music');
+      if (audio.paused) {
+        audio.play().then(() => {
+          musicStarted = true;
+          updateVinylState();
+        }).catch(e => console.log(e));
+      } else {
+        audio.pause();
+        updateVinylState();
+      }
+    }
+
   </script>
 </body>
 </html>
