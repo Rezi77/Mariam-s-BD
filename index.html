@@ -905,15 +905,17 @@
       }
 
       const audio = document.getElementById('bg-music');
-      if (!musicStarted) {
-        musicStarted = true;
+      musicStarted = true;
+      audio.play().then(() => {
+        updateVinylState();
+      }).catch(err => {
+        console.log("Audio play failed on mobile:", err);
+        // მეორადი ცდა აუდიოს მყისიერი ჩატვირთვით
+        audio.load();
         audio.play().then(() => {
           updateVinylState();
-        }).catch(err => {
-          console.log("Audio play failed:", err);
-          musicStarted = false;
-        });
-      }
+        }).catch(e => console.log("Second attempt failed:", e));
+      });
 
       if (clickCount < buttonTexts.length) {
         catchBtnLabel.textContent = buttonTexts[clickCount];
@@ -1075,25 +1077,28 @@
     }
 
   
-    // მობილური ბრაუზერების აუთოპლეი შეზღუდვების გვერდის ავლით პირველივე შეხებაზე
+    // მობილური ბრაუზერების (iOS Safari / Android Chrome) აუდიოს განბლოკვა პირველივე შეხებაზე
     document.addEventListener('DOMContentLoaded', () => {
       const audio = document.getElementById('bg-music');
       audio.load();
-      
-      const unlockAudio = () => {
-        if (!musicStarted) {
-          audio.play().then(() => {
-            musicStarted = true;
+
+      const unlockMobileAudio = (e) => {
+        audio.play().then(() => {
+          if (!musicStarted) {
+            audio.pause();
+            audio.currentTime = 0;
+          } else {
             updateVinylState();
-            audio.pause(); // საწყისად რომ არ დაიწყოს თუ პირდაპირ არ უნდოდათ, ან დავტოვოთ დაკვრაში
-          }).catch(e => console.log(e));
-        }
-        document.removeEventListener('touchstart', unlockAudio);
-        document.removeEventListener('click', unlockAudio);
+          }
+        }).catch(err => {
+          console.log("Mobile unlock play error:", err);
+        });
+        document.removeEventListener('touchstart', unlockMobileAudio);
+        document.removeEventListener('click', unlockMobileAudio);
       };
 
-      document.addEventListener('touchstart', unlockAudio, { once: true, passive: true });
-      document.addEventListener('click', unlockAudio, { once: true });
+      document.addEventListener('touchstart', unlockMobileAudio, { once: true, passive: true });
+      document.addEventListener('click', unlockMobileAudio, { once: true });
     });
 
   </script>
