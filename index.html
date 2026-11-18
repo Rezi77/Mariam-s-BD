@@ -746,7 +746,7 @@
         </svg>
       </div>
       <!-- მბრუნავი ვინილის ვიჯეტი (Craig Isto - Cant Get Enough) -->
-      <div class="vinyl-player-widget" onclick="toggleMusicPlayback(); triggerBurnoutSmoke(event, this);">
+      <div class="vinyl-player-widget" onclick="triggerBurnoutSmoke(event, this);">
         <div class="vinyl-disc" id="vinyl-disc-el">
           <div class="vinyl-center-label"></div>
         </div>
@@ -905,14 +905,15 @@
       }
 
       const audio = document.getElementById('bg-music');
-      // iOS აუდიოს განბლოკვა და დაკვრა პირდაპირ შეხებისას
-      audio.load();
-      audio.play().then(() => {
+      if (!musicStarted) {
         musicStarted = true;
-        updateVinylState();
-      }).catch(err => {
-        console.log("iOS touch play failed:", err);
-      });
+        audio.play().then(() => {
+          updateVinylState();
+        }).catch(err => {
+          console.log("Audio play failed:", err);
+          musicStarted = false;
+        });
+      }
 
       if (clickCount < buttonTexts.length) {
         catchBtnLabel.textContent = buttonTexts[clickCount];
@@ -1034,26 +1035,7 @@
       });
     }
 
-    function toggleMusicPlayback() {
-      const audio = document.getElementById('bg-music');
-      if (audio.paused) {
-        audio.play().then(() => {
-          musicStarted = true;
-          updateVinylState();
-        }).catch(e => {
-          console.log("Audio play error on iOS:", e);
-          // iOS fallback: force load and play
-          audio.load();
-          audio.play().then(() => {
-            musicStarted = true;
-            updateVinylState();
-          });
-        });
-      } else {
-        audio.pause();
-        updateVinylState();
-      }
-    }
+
 
   
     function triggerBurnoutSmoke(event, element) {
