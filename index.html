@@ -328,17 +328,17 @@
       color: #bae6fd;
       font-family: 'Dancing Script', cursive, serif;
       font-weight: 700;
-      font-size: 1.05rem;
-      margin-bottom: 1px;
+      font-size: 1.2rem;
+      margin-bottom: 2px;
       letter-spacing: 0.5px;
       text-shadow: 0 2px 8px rgba(0, 154, 218, 0.8);
     }
 
-    .heart-btn-wrapper { margin-top: 1px; display: flex; flex-direction: column; align-items: center; }
+    .heart-btn-wrapper { margin-top: 2px; display: flex; flex-direction: column; align-items: center; }
 
     .beating-heart-btn {
       background: transparent; border: none; cursor: pointer; outline: none;
-      position: relative; width: 38px; height: 38px;
+      position: relative; width: 46px; height: 46px;
       display: flex; justify-content: center; align-items: center;
       padding: 0;
       animation: heartbeat 1.3s infinite ease-in-out;
@@ -511,132 +511,14 @@
       .media-card { height: 225px; }
       .handwritten-box { font-size: 1.22rem; line-height: 32px; padding: 16px 12px; }
       .romantic-letter-title { font-size: 1.28rem; }
-      .letter-hint-text { font-size: 0.95rem; }
-      .beating-heart-btn { width: 34px; height: 34px; }
-    }
-      /* მბრუნავი ვინილის ნანო-ვიჯეტი (კიდევ უფრო დაპატარავებული ქვედა მარცხენა კუთხეში) */
-    .vinyl-player-widget {
-      position: absolute;
-      bottom: 6px;
-      left: 6px;
-      z-index: 25;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      background: rgba(10, 22, 44, 0.9);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      padding: 2px 6px;
-      border-radius: 50px;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-      cursor: pointer;
-      user-select: none;
-      transition: transform 0.2s ease;
-    }
-    .vinyl-player-widget:hover {
-      transform: scale(1.03);
-    }
-
-    .vinyl-disc {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: radial-gradient(circle at center, #0f172a 0%, #1e293b 25%, #020617 30%, #0f172a 45%, #020617 65%, #000000 100%);
-      border: 1px solid rgba(56, 189, 248, 0.6);
-      box-shadow: 0 0 5px rgba(0, 154, 218, 0.4);
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      animation: spinVinyl 3s linear infinite;
-      animation-play-state: paused;
-    }
-
-    .vinyl-disc.playing {
-      animation-play-state: running;
-    }
-
-    @keyframes spinVinyl {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .vinyl-center-label {
-      width: 6px;
-      height: 6px;
-      background: linear-gradient(135deg, #0077c8, #e21d38);
-      border-radius: 50%;
-      border: 0.6px solid #ffffff;
-    }
-
-    .vinyl-info {
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .vinyl-song-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.46rem;
-      color: #e0f2fe;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-    }
-
-    .vinyl-artist {
-      font-size: 0.40rem;
-      color: #7dd3fc;
-      font-family: sans-serif;
-    }
-      /* ბორნაუტის კვამლის ეფექტი ვინილის ვიჯეტისთვის */
-    .smoke-puff {
-      position: absolute;
-      bottom: 25px;
-      left: 15px;
-      width: 12px;
-      height: 12px;
-      background: rgba(220, 230, 242, 0.75);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 30;
-      filter: blur(4px);
-      animation: burnoutSmoke 0.9s ease-out forwards;
-    }
-
-    @keyframes burnoutSmoke {
-      0% {
-        transform: translate(0, 0) scale(0.6);
-        opacity: 0.85;
-      }
-      50% {
-        transform: translate(var(--sx), var(--sy)) scale(1.6);
-        opacity: 0.4;
-      }
-      100% {
-        transform: translate(calc(var(--sx) * 1.5), calc(var(--sy) * 1.8)) scale(2.5);
-        opacity: 0;
-      }
-    }
-      /* გვერდების გადასვლის რბილი და ნაზი ეფექტი */
-    .page {
-      display: none; width: 100%; opacity: 0;
-      transform: scale(0.96) translateY(8px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      will-change: transform, opacity;
-    }
-
-    .page.active {
-      display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 100%;
-      opacity: 1; transform: scale(1) translateY(0);
-      position: relative;
+      .letter-hint-text { font-size: 1.1rem; }
+      .beating-heart-btn { width: 42px; height: 42px; }
     }
   </style>
 </head>
 <body>
 
   <audio id="bg-music" loop preload="auto">
-    <source src="https://cdns-preview--d.dzcdn.net/stream/c-deda7392e7618991768f804791079541-3.mp3" type="audio/mpeg">
     <source src="milan.mp3" type="audio/mpeg">
   </audio>
 
@@ -745,16 +627,6 @@
           <path d="M9.5 6.5C7.2 6.8 5.8 8.5 5.8 10.5" stroke="#e0f2fe" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.85"/>
         </svg>
       </div>
-      <!-- მბრუნავი ვინილის ვიჯეტი (Craig Isto - Cant Get Enough) -->
-      <div class="vinyl-player-widget" onclick="triggerBurnoutSmoke(event, this);">
-        <div class="vinyl-disc" id="vinyl-disc-el">
-          <div class="vinyl-center-label"></div>
-        </div>
-        <div class="vinyl-info">
-          <span class="vinyl-song-title">Cant Get Enough</span>
-          <span class="vinyl-artist">Craig Isto 🎶</span>
-        </div>
-      </div>
       
       <div class="gallery-container-wrapper">
         <div class="gallery" id="gallery-container">
@@ -811,7 +683,6 @@
         <svg class="mini-logo-inline bmw-spin" viewBox="0 0 100 100"><use href="#bmw-roundel"/></svg>
       </div>
       <div class="m-stripe-bar" style="width:65%; margin-bottom:6px;"></div>
-
 
       <div class="handwritten-box">
         <p><span id="typed-letter" class="pen-cursor"></span></p>
@@ -904,18 +775,11 @@
         event.stopPropagation();
       }
 
-      const audio = document.getElementById('bg-music');
-      musicStarted = true;
-      audio.play().then(() => {
-        updateVinylState();
-      }).catch(err => {
-        console.log("Audio play failed on mobile:", err);
-        // მეორადი ცდა აუდიოს მყისიერი ჩატვირთვით
-        audio.load();
-        audio.play().then(() => {
-          updateVinylState();
-        }).catch(e => console.log("Second attempt failed:", e));
-      });
+      if (!musicStarted) {
+        musicStarted = true;
+        const audio = document.getElementById('bg-music');
+        audio.play().catch(() => { musicStarted = false; });
+      }
 
       if (clickCount < buttonTexts.length) {
         catchBtnLabel.textContent = buttonTexts[clickCount];
@@ -968,19 +832,16 @@
     }
 
     function goToPage(pageId) {
-      setTimeout(updateVinylState, 350);
       const currentPage = document.querySelector('.page.active');
       const nextPage = document.getElementById(pageId);
 
       if (currentPage && currentPage !== nextPage) {
         currentPage.style.opacity = '0';
-        currentPage.style.transform = 'scale(0.96) translateY(8px)';
+        currentPage.style.transform = 'scale(0.92) translateY(-15px)';
 
         setTimeout(() => {
           currentPage.classList.remove('active');
-          currentPage.style.opacity = '';
           currentPage.style.transform = '';
-
           nextPage.classList.add('active');
           
           requestAnimationFrame(() => {
@@ -996,7 +857,7 @@
             clearTimeout(letterTypingTimeout);
             typeText("typed-letter", fullLetterText, 45);
           }
-        }, 250);
+        }, 300);
       }
     }
 
@@ -1024,83 +885,6 @@
 
       videos.forEach(video => videoObserver.observe(video));
     }
-  
-    function updateVinylState() {
-      const audio = document.getElementById('bg-music');
-      const vinyls = document.querySelectorAll('.vinyl-disc');
-      vinyls.forEach(v => {
-        if (!audio.paused && musicStarted) {
-          v.classList.add('playing');
-        } else {
-          v.classList.remove('playing');
-        }
-      });
-    }
-
-
-
-  
-    function triggerBurnoutSmoke(event, element) {
-      const rect = element.getBoundingClientRect();
-      const x = rect.left + rect.width / 2;
-      const y = rect.top + rect.height / 2;
-      
-      const puffCount = 6;
-      const fragment = document.createDocumentFragment();
-      const created = [];
-
-      for (let i = 0; i < puffCount; i++) {
-        const p = document.createElement('div');
-        p.className = 'smoke-puff';
-        
-        const angle = (Math.PI * 2 * i) / puffCount + (Math.random() * 0.5 - 0.25);
-        const distance = 25 + Math.random() * 35;
-        const sx = Math.round(Math.cos(angle) * distance) + 'px';
-        const sy = Math.round(Math.sin(angle) * distance - 20) + 'px'; // drift upwards
-
-        p.style.setProperty('--sx', sx);
-        p.style.setProperty('--sy', sy);
-        p.style.left = (rect.left + Math.random() * rect.width) + 'px';
-        p.style.top = rect.top + 'px';
-
-        fragment.appendChild(p);
-        created.push(p);
-      }
-
-      document.body.appendChild(fragment);
-
-      setTimeout(() => {
-        for (let i = 0; i < created.length; i++) {
-          created[i].remove();
-        }
-      }, 900);
-    }
-
-  
-    // მობილური ბრაუზერების (iOS Safari / Android Chrome) აუდიოს განბლოკვა პირველივე შეხებაზე
-    document.addEventListener('DOMContentLoaded', () => {
-      const audio = document.getElementById('bg-music');
-      audio.load();
-
-      const unlockMobileAudio = (e) => {
-        audio.play().then(() => {
-          if (!musicStarted) {
-            audio.pause();
-            audio.currentTime = 0;
-          } else {
-            updateVinylState();
-          }
-        }).catch(err => {
-          console.log("Mobile unlock play error:", err);
-        });
-        document.removeEventListener('touchstart', unlockMobileAudio);
-        document.removeEventListener('click', unlockMobileAudio);
-      };
-
-      document.addEventListener('touchstart', unlockMobileAudio, { once: true, passive: true });
-      document.addEventListener('click', unlockMobileAudio, { once: true });
-    });
-
   </script>
 </body>
 </html>
